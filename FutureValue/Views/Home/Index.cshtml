@@ -3,26 +3,50 @@
     ViewBag.Title = "Future Value Calculator";
 }
 
+<div class="container">
+    
+    <header class="jumbotron">
+        <div class="row">
+            <h1 class="col-6 ">@ViewBag.Title</h1>
+        </div>
+        
+    </header>
+    <main>
+        <form asp-action="Index" method="post" class="form-horizontal">
+            <div class="row">
+                <label asp-for="MonthlyInvestment" class="control-label col-sm-3">Monthly Investment: </label>
+                <input asp-for="MonthlyInvestment" class="form-control col-sm-3" />
+                <span asp-validation-for="MonthlyInvestment" class="text-danger col"></span>
+            </div>
+            <div class="row">
+                <label asp-for="YearlyInterestRate" class="control-label col-sm-3">Yearly Interest Rate: </label>
+                <input asp-for="YearlyInterestRate" class="form-control col-sm-3" />
+                <span asp-validation-for="YearlyInterestRate" class="text-danger col"></span>
+            </div>
+            <div class="row">
+                <label asp-for="Years" class="control-label col-sm-3">Number of Years:</label>
+                <input asp-for="Years" class="form-control col-sm-3" />
+                <span asp-validation-for="Years" class="text-danger col"></span>
+            </div>
 
-    <h1>Future Value Calculator</h1>
-    <form asp-action="Index" method="post">
-        <div asp-validation-summary="All"> </div>
-        <div>
-            <label asp-for="MonthlyInvestment">Monthly Investment: </label>
-            <input asp-for="MonthlyInvestment" />
-        </div>
-        <div>
-            <label asp-for="YearlyInterestRate">YearlyInterestRate: </label>
-            <input asp-for="YearlyInterestRate" />
-        </div>
-        <div>
-            <label asp-for="Years">Number of Years: </label>
-            <input asp-for="Years" />
-        </div>
-        <div>
-            <label>Future Value: </label>
-            <input value="@ViewBag.FV.ToString("C2")" readonly/>
-        </div>
-        <button type="submit">Calculate</button>
-        <a asp-action="Index">Clear</a>
-    </form>
+            <div class="row">
+                <label class="control-label col-sm-3">Future Value: </label>
+                <input value="@ViewBag.FV.ToString("C2")" readonly class="form-control col-sm-3" />
+            </div>
+            <div class="row">
+                <div class="col offset-sm-3 pl-0">
+                    <button type="submit" class="btn btn-primary">Calculate</button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">Clear</a>
+
+                </div>
+                <div class="row">
+                    <img id="logo" alt="jon logo" src="~/images/jon_logo.PNG" class="img-fluid rounded " />
+                </div>   
+            </div>
+        </form>
+
+
+    </main>
+</div>
+    
+    

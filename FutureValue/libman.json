@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "popper.js@1.14.7",
+      "destination": "wwwroot/lib/popper.js/"
+    },
+    {
+      "library": "jquery-validate@1.19.0",
+      "destination": "wwwroot/lib/jquery-validate/"
+    }
+  ]
+}
